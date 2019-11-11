@@ -19,8 +19,8 @@ SET(CMAKE_CXX_FLAGS $ENV{CXX_FLAGS})
 #
 FILE(GLOB SRC "./*.cpp")
 #
-PROJECT(xsc-proto-client-cpp)
+PROJECT(xsc-proto-cpp)
 #
-ADD_LIBRARY(xsc-proto-client-cpp STATIC ${SRC})
+ADD_LIBRARY(xsc-proto-cpp STATIC ${SRC})
 INCLUDE(./__file__.cmake)
-REDEFINE_FILE_MACRO(xsc-proto-client-cpp)
+REDEFINE_FILE_MACRO(xsc-proto-cpp)
