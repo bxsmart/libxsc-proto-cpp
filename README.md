@@ -2,7 +2,9 @@
 
 [XSC](http://www.dev5.cn/x_msg_im/start/xsc/)协议的c++实现. 另见[java实现](https://github.com/dev5cn/libxsc-proto-java).
 
-`XSC`(X Server Communication)协议栈是一个高度可扩展, 向前向后兼容, 低冗余的电信级通信协议栈, 它分为三层: `传输层`, `事务控制层`, `应用层`
+`XSC`(X Server Communication)协议栈是一个高度可扩展, 向前向后兼容, 低冗余的电信级通信协议栈, 它分为三层: `传输层`, `事务控制层`, `应用层`.
+
+`XSC`协议栈为[X-MSG-IM](https://github.com/dev5cn/x-msg-im)设计, 但是它同样`非常`适合用于其它要求高实时性的场景, 如: 物联网设备控制, 网络游戏, 微服务间的rpc.
 
 ![img](http://www.dev5.cn/x_msg_im/start/xsc/img/xsc-protocol-stack.svg)
 
