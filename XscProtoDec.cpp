@@ -89,7 +89,7 @@ int XscProtoDec::getShort(xsc_tlv_node* node, ushort t, ushort* v)
 	if (x->self.l != 2)
 		return 1;
 	::memcpy(v, x->self.v, 2);
-	*v = ::ntohs(*v);
+	*v = htons(*v);
 	return 0;
 }
 
@@ -234,7 +234,7 @@ int XscProtoDec::genTl(uchar* dat, uint size, uchar* ll, uint* l)
 	if (*ll == 3) 
 	{
 		::memcpy(((uchar*) l), dat + (1 + 1), 2);
-		*l = ::ntohs(*((ushort*) l));
+		*l = htons(*((ushort*) l));
 		if (size < ((uint) (1 + *ll)) + *l)
 		{
 			LOG_TRACE("no enough size for decode value-field, size: %08X, ll: %02X, l: %04X", size, *ll, *l)

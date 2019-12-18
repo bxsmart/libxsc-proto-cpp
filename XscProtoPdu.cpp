@@ -68,7 +68,7 @@ shared_ptr<XscProtoPdu> XscProtoPdu::decode(uchar* dat, int len, bool* exp )
 	}
 	if (length == 0x01) 
 	{
-		pduLen = ::ntohs(*((ushort*) (dat + 1)));
+		pduLen = htons(*((ushort*) (dat + 1)));
 		if (pduLen < 1 + 2 + 3) 
 		{
 			LOG_DEBUG("xsc pdu length must be >= 6 bytes")
@@ -151,7 +151,7 @@ uchar* XscProtoPdu::bytes(int* len)
 	{
 		ofst = XSC_TRANSM_MTU - sizeh - sizet - 3 ;
 		__pdu_bytes__[ofst] = this->transm.header == NULL ? 0x02 : 0x03 ;
-		ushort x = ::htons((ushort) size);
+		ushort x = htons((ushort) size);
 		::memcpy(__pdu_bytes__ + ofst + 1, (uchar*) &x, 2);
 	} else if (lenlen == 3)
 	{

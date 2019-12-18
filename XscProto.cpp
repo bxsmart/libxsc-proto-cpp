@@ -146,7 +146,7 @@ string XscProto::v2str(xsc_tlv* node)
 		return DateMisc::to_yyyy_mm_dd_hh_mi_ss_ms(Net::ntohll(*((ullong*) node->v))).c_str();
 	case XSC_TAG_RET:
 	{
-		ushort ret = ::ntohs(*((ushort*) node->v));
+		ushort ret = htons(*((ushort*) node->v));
 		return (ret >= RET_SUCCESS && ret <= RET_USR_OR_PASSWORD_ERROR) ? __xsc_ret__[ret].d : Net::hex2strUperCaseSpace(node->v, node->l);
 	}
 	default:

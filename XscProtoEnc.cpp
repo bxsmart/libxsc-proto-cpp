@@ -39,7 +39,7 @@ void XscProtoEnc::addStr(xsc_tlv_pdu* xtp, uchar t, const char* v)
 
 void XscProtoEnc::addShort(xsc_tlv_pdu* xtp, uchar t, ushort v)
 {
-	ushort x = ::htons(v);
+	ushort x = htons(v);
 	XscProtoEnc::addBin(xtp, t, (uchar*) &x, sizeof(ushort));
 }
 
